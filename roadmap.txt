@@ -1,0 +1,14 @@
+ROADMAP
+
+Planned features
+-Sheep logo using ASCII
+-Can edit text files
+-Can make and delete files
+-Can navigate folder structure
+-Substitution inside of files
+-Custom themes
+-Colour highlighting
+-Options in separate file
+-Keyboard navigation
+-Keyboard shortcuts
+-----------------------------------

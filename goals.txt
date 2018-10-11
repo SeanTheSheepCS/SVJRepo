@@ -1,0 +1,18 @@
+GOALS
+
+Week EVERY Week:
+-Good documentation
+-Unit tests for all functions
+-SMARRT goals
+-Good (or at least internally consistent) coding style
+
+
+Week 1:
+-Program compiles
+-Have cmake compile the program
+-Code style document
+
+Week 2:
+-UML skeleton diagram
+-Planned features
+-

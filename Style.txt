@@ -1,0 +1,8 @@
+//Style Rudder notation
+//type at end of every variable
+//brackets on new lines
+
+//variables camelcase start lower
+//classes camelcase start upper
+//functions snakecase start lower
+//increment by spaces not tabs

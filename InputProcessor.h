@@ -1,13 +1,11 @@
-class Renderer
+class InputProcessor
 {
-public:
+ public:
   //Manager Functions
-  Renderer();
-  ~Renderer();
+  InputProcessor();
+  ~InputProcessor();
   //Getter and Setter Functions
   //Implementer Functions
-  void display();
-
-private:
+ private:
 
 }

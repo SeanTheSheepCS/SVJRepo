@@ -8,11 +8,11 @@ Writer::write_char(char source_c)
 {
   destination_Fl.getDest() << source_c;
 }
-Writer::Writer()
+Writer::Writer(selectedFile_Fl)
 {
-
+  destination_Fl = selectedFile_Fl;
 }
 Writer::~Writer()
 {
-
+  
 }

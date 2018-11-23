@@ -75,6 +75,7 @@ int File::closeFile()
 {
   destination << endl;
   destination.close();
+  return 0;
 }
 
 int File::openFileWriteMode()

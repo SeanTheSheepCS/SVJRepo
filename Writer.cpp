@@ -15,7 +15,7 @@ Writer::Writer(File& selectedFile_Fl)
 }
 Writer::~Writer()
 {
-
+  //must destroy linked list
 }
 
 int Writer::readFile()
@@ -126,4 +126,48 @@ void Writer::insertAt(char input_c)
     newNode_NP -> next = atLocation_NP;
   }
 
+}
+int Writer::backspace()
+{
+  //backspace must be detected by Manager. Manager calls onto this function which calls onto removeAt and LastMove(s)??
+  int k = removeAt();
+  if (k == 1)
+  {
+    cout << "failed to remove" << endl;
+    return 1;
+  }
+  return 0;
+}
+int Writer::removeAt()
+{
+  Node* atLocation_NP = head_NP;
+  for (int i = 0; i < currentLocation_cu -> row-1; i++)
+  {
+    while(atLocation_NP -> data_EP -> ch != '\n')
+    {
+      if(atLocation_NP != nullptr)
+      {
+        atLocation_NP = atLocation_NP -> next;
+      }
+      else
+      {
+        //Invalid row or column :(
+        cout << "Cursor at Invalid Location!" << endl;
+        return 1;
+      }
+    }
+  }
+  //3 consecutive nodes centered around the one to be deleted
+  Node* prev_NP = atLocation_NP;
+  atLocation_NP = atLocation_NP -> next;
+  Node* next_NP = atLocation_NP -> next;
+
+  //change delete to save to be able to recall last 10 moves
+  delete atLocation_NP -> data_EP;
+  delete atLocation_NP;
+
+  //connect
+  prev_NP -> next = next_NP;
+
+  return 0;
 }

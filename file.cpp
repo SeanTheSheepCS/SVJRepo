@@ -21,10 +21,12 @@ File::File()
   {
     cout << "Unable to open file" << endl;
   }
+  destination.close();
 }
 File::File(string fileName_st)
 {
   destination.open(fileName_st, ios::app);
+
   if(destination.is_open())
   {
     language = findType(fileName_st);
@@ -33,11 +35,12 @@ File::File(string fileName_st)
   {
     cout << "Unable to open file" << endl;
   }
+  destination.close();
 }
 
 File::~File()
 {
-  destination.close();
+
 }
 
 void File::setDest(string newFileName_st)
@@ -47,6 +50,7 @@ void File::setDest(string newFileName_st)
   {
     cout << "Unable to open file" << endl;
   }
+  destination.close();
 }
 
 string File::findType(string fileName_st)
@@ -54,4 +58,35 @@ string File::findType(string fileName_st)
   map<string,string> extensionMap_mp;
   extensionMap_mp.insert(pair<string,string>(".txt","text_file"));
   return ".txt";
+}
+
+int File::openFileReadMode()
+{
+  destination.open(fileName_st, ios::in);
+  if(!destination)
+  {
+    return 0;
+  }
+  else
+  {
+    return 1;
+  }
+}
+
+int File::closeFile()
+{
+  destination.close();
+}
+
+int File::openFileWriteMode()
+{
+  destination.open(fileName_st, ios::out);
+  if(!destination)
+  {
+    return 0;
+  }
+  else
+  {
+    return 1;
+  }
 }

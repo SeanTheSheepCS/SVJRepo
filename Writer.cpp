@@ -26,6 +26,7 @@ int Writer::readFile()
   if(success == 0)
   {
     //Opening file failed!
+    cout << "Failed to open the file." << endl;
     return 0;
   }
   char current_ch;
@@ -63,6 +64,7 @@ int Writer::saveFile()
   if(success == 0)
   {
     //Opening file failed!
+    cout << "Failed to save the file." << endl;
     return 0;
   }
   Node* current_Nd = head_NP;
@@ -98,6 +100,7 @@ void Writer::insertAt(char input_c)
       else
       {
         //Invalid row or column :(
+        cout << "Cursor at Invalid Location!" << endl;
         return;
       }
     }
@@ -112,7 +115,15 @@ void Writer::insertAt(char input_c)
   }
 
   //Place the character into the list.
-  prev_NP -> next = newNode_NP;
-  newNode_NP -> next = atLocation_NP;
+  if(prev_NP != 0)
+  {
+    prev_NP -> next = newNode_NP;
+    newNode_NP -> next = atLocation_NP;
+  }
+  else
+  {
+    head_NP = newNode_NP;
+    newNode_NP -> next = atLocation_NP;
+  }
 
 }

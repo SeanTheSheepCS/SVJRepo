@@ -7,6 +7,11 @@
 
 using namespace std;
 
+/*
+-----------------------
+SHOULD NOT INCLUDE THIS
+-----------------------
+
 File::File()
 {
   cout << "New File: enter your desired filename" << endl;
@@ -23,19 +28,12 @@ File::File()
   }
   destination.close();
 }
+*/
+
+
 File::File(string fileName_st)
 {
-  destination.open(fileName_st, ios::app);
-
-  if(destination.is_open())
-  {
-    language = findType(fileName_st);
-  }
-  else
-  {
-    cout << "Unable to open file" << endl;
-  }
-  destination.close();
+  this -> fileName_st = fileName_st;
 }
 
 File::~File()
@@ -63,7 +61,7 @@ string File::findType(string fileName_st)
 int File::openFileReadMode()
 {
   destination.open(fileName_st, ios::in);
-  if(!destination)
+  if(destination.fail())
   {
     return 0;
   }
@@ -75,13 +73,14 @@ int File::openFileReadMode()
 
 int File::closeFile()
 {
+  destination << endl;
   destination.close();
 }
 
 int File::openFileWriteMode()
 {
   destination.open(fileName_st, ios::out);
-  if(!destination)
+  if(destination.fail())
   {
     return 0;
   }

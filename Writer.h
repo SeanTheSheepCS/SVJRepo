@@ -31,14 +31,14 @@ public:
  ~Writer();
  //Getter and Setter Functions
  //Implementer Functions
- int backspace(int row, int col);
+ int backspace();
  int readFile();
  int saveFile();
  void moveCursor(int numOfCols_i, int numOfRows_i);
  void insertAt(char input_c);
 private:
   //Helper
-  void removeAt();
+  int removeAt();
   void destroy();
   //data members
   Node* head_NP;

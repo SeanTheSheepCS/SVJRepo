@@ -17,7 +17,6 @@ public:
   File(string fileName_st);
   ~File();
   //Getter and Setter Functions
-  void setDest(string fileName_st);
   //Implementer Functions
   void seekInFile(int row, int col);
   int openFileReadMode();
@@ -27,8 +26,6 @@ private:
   //Helper Functions
   string findType(string fileName_st);
   //data members
-  int cursorRow;
-  int cursorCol;
   string language;
   string mode;
   bool isOpen;

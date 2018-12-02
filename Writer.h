@@ -40,6 +40,7 @@ private:
   //Helper
   int removeAt();
   void destroy();
+  Node* cursorLoc();
   //data members
   Node* head_NP;
   Node* tail_NP;

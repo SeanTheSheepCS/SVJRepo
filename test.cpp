@@ -44,6 +44,18 @@ bool testWriter()
   myWriter -> insertAt('e');
   myWriter -> insertAt('H');
 
+  myWriter -> moveCursor(-1,0);
+  myWriter -> moveCursor(0,-2);
+  myWriter -> insertAt('l');
+  myWriter -> insertAt('u');
+  myWriter -> insertAt('f');
+  myWriter -> insertAt('i');
+  myWriter -> insertAt('t');
+  myWriter -> insertAt('u');
+  myWriter -> insertAt('a');
+  myWriter -> insertAt('e');
+  myWriter -> insertAt('B');
+
   myWriter -> saveFile();
   return true;
 }

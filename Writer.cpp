@@ -36,7 +36,7 @@ Writer::~Writer()
   //must destroy linked list
 }
 
-void Writer::moveCursor(int numOfCols_int, int numOfCols_int)
+void Writer::moveCursor(int numOfCols_int, int numOfRows_int)
 {
   Node* currentLocation_NP;
 
@@ -59,14 +59,14 @@ void Writer::moveCursor(int numOfCols_int, int numOfCols_int)
     {
       for(int i = 0; i < numOfRows_int; i++) //How many rows to go down.
       {
-        if(currentLocation_NP->next == nullptr)
+        if(currentLocation_NP->next == nullptr) //If you have hit the last node on the list
         {
           //You have reached the end already, no need to go any further.
           break;
         }
         while(currentLocation_NP -> data_EP -> ch != '\n') //Until you hit the end of the line
         {
-          currentLocation_NP = currentLocation_NP -> next;
+          currentLocation_NP = currentLocation_NP -> next; //Continue in the list
         }
         currentLocation_NP = currentLocation_NP -> next;
         //You are now at the start of a new line.
@@ -86,7 +86,7 @@ void Writer::moveCursor(int numOfCols_int, int numOfCols_int)
         }
         else
         {
-          currentLocation_NP = currentLocation_NP -> next;
+          currentLocation_NP = currentLocation_NP -> next; //Move along
         }
       }
     }
@@ -95,7 +95,7 @@ void Writer::moveCursor(int numOfCols_int, int numOfCols_int)
     if(numOfRows_int < 0)
     {
       numOfRows_int = 0-numOfRows_int;
-      for(int i = 0; i < numOfRows_int; i++) //How many rows to go up.
+      for(int i = -1; i < numOfRows_int; i++) //How many rows to go up. i is minus one so it goes one extra.
       {
         if(currentLocation_NP->prev == nullptr)
         {
@@ -107,7 +107,7 @@ void Writer::moveCursor(int numOfCols_int, int numOfCols_int)
           currentLocation_NP = currentLocation_NP -> prev;
         }
         currentLocation_NP = currentLocation_NP -> prev;
-        //You are now at the start of a new line.
+        //You are now at the end of a new line.
       }
       //You now will move the original amount of columns forward you were.
       for(int j = 0; j < currentCol_int; j++)
@@ -133,10 +133,21 @@ void Writer::moveCursor(int numOfCols_int, int numOfCols_int)
     (currentLocation_CP -> row) += numOfRows_int;
   }
 
-
-  if(numOfCols_int != 0)
+  //Move cursor by (numOfCols_int) characters forward or back
+  if(numOfCols_int < 0)
   {
+    for(int i = 0; i<numOfCols_int; i++)
+    {
 
+      currentLocation_NP = currentLocation_NP -> prev;
+    }
+  }
+  else if (numOfCols_int > 0)
+  {
+    for(int i = 0; i<numOfCols_int; i++)
+    {
+      currentLocation_NP = currentLocation_NP -> prev;
+    }
   }
 }
 
@@ -157,7 +168,7 @@ int Writer::backspace()
 int Writer::removeAt()
 {
   Node* atLocation_NP = head_NP;
-  for (int i = 0; i < currentLocation_cu -> row-1; i++)
+  for (int i = 0; i < currentLocation_CP -> row-1; i++)
   {
     while(atLocation_NP -> data_EP -> ch != '\n')
     {

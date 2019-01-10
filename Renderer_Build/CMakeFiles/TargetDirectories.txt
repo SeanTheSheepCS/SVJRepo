@@ -1,0 +1,3 @@
+C:/Users/seank/OneDrive/Desktop/Everything/SVJRepo/Renderer_Build/CMakeFiles/SVJRepo.dir
+C:/Users/seank/OneDrive/Desktop/Everything/SVJRepo/Renderer_Build/CMakeFiles/ALL_BUILD.dir
+C:/Users/seank/OneDrive/Desktop/Everything/SVJRepo/Renderer_Build/CMakeFiles/ZERO_CHECK.dir

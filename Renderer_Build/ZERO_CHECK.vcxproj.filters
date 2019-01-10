@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\seank\OneDrive\Desktop\Everything\SVJRepo\Renderer_Build\CMakeFiles\a0cac795d6ac3ed19aa67547735ce65d\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{FFE7BE93-D925-3DAF-82DE-0ED28B394CEA}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

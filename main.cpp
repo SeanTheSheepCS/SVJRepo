@@ -15,11 +15,5 @@ int main()
 
 int test()
 {
-  File* testFile = new File("texty_boiiii.txt");
-  Writer* lovecraft = new Writer(*testFile);
-  lovecraft -> write_char('t');
-  lovecraft -> write_char('e');
-  lovecraft -> write_char('s');
-  lovecraft -> write_char('t');
-  return 0;
+  cout << "WORKS" << endl;
 }
